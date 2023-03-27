@@ -1,11 +1,12 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 
 #include "atunnel.h"
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
+    /*
     if (argc != 2)
     {
       printf("atunnel usage: at <port>\n");
@@ -18,10 +19,16 @@ int main(int argc, char* argv[])
       printf("atunnel usage: at <port>\n");
       return EXIT_SUCCESS;
     }
+    */
 
-    uint16_t port = (uint16_t)tmp;
+    // init(argv[1]);
 
-    test();
+    struct server_context ctx;
+    if (init(&ctx, "8080")) {
+	stop(&ctx);
+	return EXIT_FAILURE;
+    }
 
+    stop(&ctx);
     return EXIT_SUCCESS;
 }

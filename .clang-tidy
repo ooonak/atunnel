@@ -1,21 +1,17 @@
 Checks: '
-        boost*,
         bugprone*,
-        clang-analyzer*,
         cert*,
-        cppcore*,
+        clang-analyzer*,
+        google*,
+        llvm-*,
+        linuxkernel-must-check-errs,
         misc*,
-        modernize*,-modernize-use-trailing-return-type,
+        modernize*,
         performance*,
         portability*,
         readability*,
-        google*,-google-runtime-references,
-        llvm-*,-llvm-header-guard,-llvm-include-order,
-        -*-braces-around-statements
 '
 WarningsAsErrors: '*'
-HeaderFilterRegex: '(^gtest)/.*'
-AnalyzeTemporaryDtors: false
 FormatStyle: file
 ...
 

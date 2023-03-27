@@ -4,7 +4,10 @@ project(atunnel LANGUAGES C)
 
 find_package(OpenSSL REQUIRED)
 
-set(LIB_SOURCES atunnel.c include/atunnel.h)
+set(LIB_SOURCES
+    atunnel.c include/atunnel.h
+    connections.c connections.h
+)
 
 add_library(${PROJECT_NAME} STATIC ${LIB_SOURCES})
 
